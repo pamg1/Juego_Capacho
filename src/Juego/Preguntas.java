@@ -92,24 +92,40 @@ public class Preguntas extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
      if (ae.getSource()==boton1) {
-         if (Verdadero==1) {
-             Puntaje++;
-         }
+        if (Verdadero==1) {
+            Puntaje++;
+        }
+        this.dispose();
+        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos representa el bloque de código:<html><body>/BloqueBubbleSort/Bubble Sort/Quick Sort/Insert Sort/Select Sort/Bubble Sort",0);
+        P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        P.setVisible(true);
      }
      if (ae.getSource()==boton2) {
-       if (Verdadero==2) {
+        if (Verdadero==2) {
              Puntaje++;
-         }   
+        }   
+        this.dispose();
+        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos representa el bloque de código:<html><body>/BloqueBubbleSort/Bubble Sort/Quick Sort/Insert Sort/Select Sort/Bubble Sort",0);
+        P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        P.setVisible(true);
      }
      if (ae.getSource()==boton3) {
         if (Verdadero==3) {
              Puntaje++;
-         }
+        }
+        this.dispose();
+        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos representa el bloque de código:<html><body>/BloqueBubbleSort/Bubble Sort/Quick Sort/Insert Sort/Select Sort/Bubble Sort",0);
+        P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        P.setVisible(true);
      }
      if (ae.getSource()==boton4) {
-          if (Verdadero==4) {
-             Puntaje++;
-         }
+        if (Verdadero==4) {
+            Puntaje++;
+        }
+        this.dispose();
+        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos representa el bloque de código:<html><body>/BloqueBubbleSort/Bubble Sort/Quick Sort/Insert Sort/Select Sort/Bubble Sort",0);
+        P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        P.setVisible(true);
      }
     }
    

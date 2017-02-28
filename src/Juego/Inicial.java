@@ -16,6 +16,7 @@ public class Inicial extends javax.swing.JFrame {
     boolean Register;
     /**
      * Creates new form Inicial
+     * @param Registro
      */
     public Inicial(boolean Registro) {
         initComponents();
@@ -91,6 +92,7 @@ public class Inicial extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if (Register) {
+            this.dispose();
             Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos representa el bloque de código:<html><body>/BloqueBubbleSort/Bubble Sort/Quick Sort/Insert Sort/Select Sort/Bubble Sort",0);
             P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             P.setVisible(true);
