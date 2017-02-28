@@ -28,7 +28,7 @@ public class ObjetoPintado extends JPanel {
         this.Imagen = Imagen;
         this.Respuesta = Respuesta;
         if (Imagen) {
-           this.ImagenT = new ImageIcon(getClass().getResource("Mapa_Entregas//"+nImagen+".jpg")).getImage();
+           this.ImagenT = new ImageIcon(getClass().getResource("ImagenesJuego//"+nImagen+".png")).getImage();
         }
     }
 
@@ -36,15 +36,19 @@ public class ObjetoPintado extends JPanel {
     @Override
      protected void paintComponent(Graphics g) {
         g.drawRect(0,0,getWidth()-5,getHeight()-5);
-        if (Imagen) {
-            g.drawImage(ImagenT,20,20,null);
-        }
-        JLabel l=new JLabel(Texto);
+         JLabel l=new JLabel(Texto);
         l.setHorizontalAlignment(JLabel.CENTER);
         l.setFont(new Font("Verdana", Font.BOLD, 16));
         l.setForeground(Color.ORANGE);
+        if (Imagen) {
+        g.drawImage(ImagenT,getWidth()/2-ImagenT.getWidth(null)/2,20,null);
+        l.setBounds(20,ImagenT.getHeight(null)/2,getWidth(),getHeight()-20);
+        add(l);
+        }else{
         l.setBounds(20,20,getWidth(),getHeight()-20);
         add(l);
+        }
+
     }
   
     

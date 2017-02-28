@@ -55,7 +55,7 @@ public class Preguntas extends JFrame implements ActionListener {
         add(boton4);
         boton4.addActionListener(this);
         String[] PR = Pregunta.split("/");
-        ObjetoPintado panelMain = new ObjetoPintado(PR[0],PR[1],false,false);
+        ObjetoPintado panelMain = new ObjetoPintado(PR[0],PR[1],true,false);
         panelMain.setBounds(20, 20, getWidth()-40,getHeight()/2);
         panelMain.setPreferredSize(new Dimension(300,100));
         add(panelMain);
@@ -90,7 +90,7 @@ public class Preguntas extends JFrame implements ActionListener {
 
          public static void main(String[] args) {
         // TODO code application logic here
-        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos tiene complejidad O(n^2):<html><body>//Bubble Sort/Quick Sort/Heap Sort/Ninguno de los anteriores/Bubble Sort",0);
+        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos representa el bloque de código:<html><body>/BloqueBubbleSort/Bubble Sort/Quick Sort/Insert Sort/Select Sort/Bubble Sort",0);
         P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         P.setVisible(true);
         }

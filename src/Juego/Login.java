@@ -12,12 +12,14 @@ import javax.swing.JOptionPane;
  * @author digital
  */
 public class Login extends javax.swing.JFrame {
-
+    String Registro;
+    int TipoVentana;
     /**
      * Creates new form Login
      */
-    public Login() {
+    public Login(int Tipe) {
         initComponents();
+        this.TipoVentana=Tipe;
     }
 
     /**
@@ -99,10 +101,37 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    Inicial Ini = new Inicial(true);
-    Ini.setVisible(true);
-    Ini.setLocationRelativeTo(null);
+    // TODO add your handling code here:
+        if (jTextField1.getText().compareTo("")!=0 && jTextField2.getText().compareTo("")!=0) {
+        Registro = jTextField1.getText() + "-" + jTextField2.getText();
+        ControladorArchivo C = new ControladorArchivo(System.getProperty("user.dir") + "/src/juego/ArchivosJuego/UsuariosJuego.txt");
+        boolean sw = C.BuscarArchivo(Registro);
+            if (sw==true) {
+                if (TipoVentana==1) {
+                  JOptionPane.showMessageDialog(null,"El usuario ya se encuentra registrado","Nombre Juego",JOptionPane.WARNING_MESSAGE);
+                }else{
+                 JOptionPane.showMessageDialog(null,"Bienvenido al -Nombre Juego- " + jTextField1.getText(),"Nombre Juego" + jTextField1.getText()  ,JOptionPane.WARNING_MESSAGE);
+                     Inicial Ini = new Inicial(true);
+                     setVisible(false);
+                     Ini.setVisible(true);
+                     Ini.setLocationRelativeTo(null);
+                }
+            }else{
+               if (TipoVentana==1) {
+                  JOptionPane.showMessageDialog(null,"Registro completado.","Nombre Juego.",JOptionPane.WARNING_MESSAGE);
+                  C.EscribirArchivo(Registro);
+                  Inicial Ini = new Inicial(true);
+                  setVisible(false);
+                  Ini.setVisible(true);
+                  Ini.setLocationRelativeTo(null);
+                }else{
+                 JOptionPane.showMessageDialog(null,"El usuario " +  jTextField1.getText()  + "Código "+ jTextField2.getText() + " no existe en sistema.","Nombre Juego" ,JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        }else{
+         JOptionPane.showMessageDialog(null,"Llene todos los campos de registro.","Nombre Juego" + jTextField1.getText()  ,JOptionPane.WARNING_MESSAGE);
+        }
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
@@ -138,37 +167,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
