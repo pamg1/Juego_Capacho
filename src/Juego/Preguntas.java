@@ -88,12 +88,6 @@ public class Preguntas extends JFrame implements ActionListener {
         add(R4);
     }
 
-         public static void main(String[] args) {
-        // TODO code application logic here
-        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos representa el bloque de código:<html><body>/BloqueBubbleSort/Bubble Sort/Quick Sort/Insert Sort/Select Sort/Bubble Sort",0);
-        P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        P.setVisible(true);
-        }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
