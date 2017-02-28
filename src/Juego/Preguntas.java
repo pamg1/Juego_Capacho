@@ -32,11 +32,12 @@ public class Preguntas extends JFrame implements ActionListener {
      JPanel Panel1;
      int Puntaje;    
      
-     public Preguntas(String Pregunta){
+     public Preguntas(String Pregunta,int Puntaje){
         setSize(800,700);
         IniLoc = getHeight()/2 + 40;
         setLayout(null);
         this.setResizable(false); 
+        this.Puntaje=Puntaje;
         boton1=new JButton("1");
         boton1.setBounds(IniLocX,IniLoc,90,(getHeight()/2 - 80)/4);
         add(boton1);
@@ -89,7 +90,7 @@ public class Preguntas extends JFrame implements ActionListener {
 
          public static void main(String[] args) {
         // TODO code application logic here
-        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos tiene complejidad O(n^2):<html><body>//Bubble Sort/Quick Sort/Heap Sort/Ninguno de los anteriores/Bubble Sort");
+        Preguntas P = new Preguntas("<html><body>Cual de los siguientes algoritmos tiene complejidad O(n^2):<html><body>//Bubble Sort/Quick Sort/Heap Sort/Ninguno de los anteriores/Bubble Sort",0);
         P.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         P.setVisible(true);
         }
@@ -102,16 +103,19 @@ public class Preguntas extends JFrame implements ActionListener {
          }
      }
      if (ae.getSource()==boton2) {
-              JOptionPane.showMessageDialog(null,"","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
-         System.out.println(Verdadero);
+       if (Verdadero==2) {
+             Puntaje++;
+         }   
      }
      if (ae.getSource()==boton3) {
-               JOptionPane.showMessageDialog(null,"","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
-         System.out.println(Verdadero);
+        if (Verdadero==3) {
+             Puntaje++;
+         }
      }
      if (ae.getSource()==boton4) {
-                 JOptionPane.showMessageDialog(null,"","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
-         System.out.println(Verdadero);
+          if (Verdadero==4) {
+             Puntaje++;
+         }
      }
     }
    
