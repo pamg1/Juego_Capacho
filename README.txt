@@ -1,5 +1,6 @@
 COMO SUBIR UNA PREGUNTA.
-
+:eggplant: :eggplant: :eggplant:
+:peach: :peach: :peach:
 en un archvio de texto donde se pondran todas las preguntas por nivel, se escriben de la siguiente manera.
 
 pregunta/nombre de la imagen de la pregunta si no tiene se deja vacio/respuesta1/respuesta2/respuesta3/respuesta4/respuesta correcta
